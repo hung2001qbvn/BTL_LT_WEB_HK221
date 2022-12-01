@@ -114,7 +114,6 @@ function loginAction() {
     }
 
     if(!empty($username) && !empty($password)){
-        $password =  md5($password);
         if(checkLogin($username, $password)){
             $data = getUserByUsername($username,$password);
             $_SESSION['is_login'] = true;

@@ -18,8 +18,8 @@
 $db = array(
     'hostname' => 'localhost',
     'username' => 'root',
-    'password' => '',
-    'database' => 'store',
+    'password' => 'neverhacked123',
+    'database' => 'new_schema',
 );
 
 

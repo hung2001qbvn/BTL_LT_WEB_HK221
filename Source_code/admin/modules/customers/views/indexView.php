@@ -18,6 +18,7 @@
                                 <tr>
                                     <td><input type="checkbox" name="checkAll" id="checkAll"></td>
                                     <td><span class="thead-text">STT</span></td>
+                                    <td><span class="thead-text">Tài khoản</span></td>
                                     <td><span class="thead-text">Họ tên</span></td>
                                     <td><span class="thead-text">Email</span></td>
                                     <td><span class="thead-text">Số điện thoại</span></td>
@@ -31,6 +32,7 @@
                                 <tr>
                                     <td><input type="checkbox" name="checkItem" class="checkItem"></td>
                                     <td><span class="tbody-text"><?php echo ($key +1); ?></h3></span>
+                                    <td><span class="tbody-text"><?php echo $value['username']; ?></h3></span>
                                     <td><span class="tbody-text"><?php echo $value['fullname']; ?></h3></span>
                                     <td><span class="tbody-text"><?php echo $value['mail']; ?></span></td>
                                     <td><span class="tbody-text"><?php echo $value['phone']; ?></span></td>
@@ -38,8 +40,16 @@
                                     <td><span class="tbody-text"><?php echo $value['create_date']; ?></span></td>
                                     <td>
                                         <ul class="list-operation ">
-                                            <li><a href="?modules=customers&controllers=index&action=edit&id=" title="Sửa" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                                            <li><a onclick="return Del('<?php echo $value['fullname'];?>')" href="?modules=products&controllers=index&action=delete&id=<?php echo $value['id'] ;?>" title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+                                            <li><a href="?modules=customers&controllers=index&action=edit" title="Sửa" 
+                                            <?php $_SESSION['customer_username'] = $value['username']; 
+                                            $_SESSION['customer_fullname'] = $value['fullname'];
+                                            $_SESSION['customer_mail'] = $value['mail'];
+                                            $_SESSION['customer_phone'] = $value['phone'];
+                                            $_SESSION['customer_address'] = $value['address'];
+                                            ?> class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                                            <li><a href="?modules=customers&controllers=index&action=delete" 
+                                            <?php $_SESSION['customer_id'] = $value['id']; ;?>
+                                            title="Xóa" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </td>
                                 </tr>

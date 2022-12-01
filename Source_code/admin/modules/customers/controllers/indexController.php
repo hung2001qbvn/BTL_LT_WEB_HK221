@@ -29,7 +29,7 @@ function listAction() {
 	};
 
 	$data = [$res, $num, $page];
-	 load_view('index',$data);
+	load_view('index',$data);
 }
 
 function addAction() {
@@ -95,7 +95,7 @@ function addAction() {
 		}
 		else{
 				
-				echo " <script type='text/javascript'> alert('Thêm mới khách hàngs thất bại');</script>";
+				echo " <script type='text/javascript'> alert('Thêm mới khách hàng thất bại');</script>";
 			}
 	
 	}
@@ -104,9 +104,50 @@ function addAction() {
 }
 
 function deleteAction() {
-	$id = $_GET['id'];
+	$id = $_SESSION['customer_id'];
 	delete_customer_by_id($id);
 	header('location:?modules=customers&controllers=index&action=list');
+	
+}
+
+function editACtion(){
+	$data = [
+		[
+		'fullname' => $_SESSION['customer_fullname'],
+		'username' => $_SESSION['customer_username'],
+		'mail' => $_SESSION['customer_mail'],
+		'phone' => $_SESSION['customer_phone'],
+		'address' =>$_SESSION['customer_address'],
+		]
+	];
+	load_view('update',$data);
+}
+
+function updateAction(){
+
+    $fullname = $_POST['fullname'];
+    $username = $_POST['username'];
+    $mail = $_POST['mail'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $data = [
+        [
+        'fullname' => $fullname,
+        'username' => $username,
+        'mail' => $mail,
+        'phone' => $phone,
+        'address' =>$address
+        ]
+    ];
+    $num = updateUser($fullname, $username,$mail,$phone,$address);
+    if($num ==1){
+        load_view('update',$data);
+        echo " <script type='text/javascript'> alert('Cập Nhật Thành Công');</script>";
+    }
+    else {
+        load_view('update',$data);
+        echo " <script type='text/javascript'> alert('Thông Tin Đã Tồn Tại');</script>";
+    }
 }
 
 ?>

@@ -68,13 +68,13 @@
 								<input type="text" name="username" id="fullname" class="form-control">
 							</div>
 							<div class="form-col fl-right">
-								<label for="email">Mật khẩu</label>
-								<input style="height: 38px;width: 275px;border: 1px solid #cccccc;" type="password" name="password" id="email" class="form-control">
+								<label for="mail">Mật khẩu</label>
+								<input style="height: 38px;width: 275px;border: 1px solid #cccccc;" type="password" name="password" id="mail" class="form-control">
 							</div>
 						</div>
 						<div class="form-row clearfix">
 							<div class="form-col fl-left">
-								<label for="address">Email</label>
+								<label for="address">mail</label>
 								<input type="text" name="mail" id="address" class="form-control">
 							</div>
 							<div class="form-col fl-right">

@@ -3,7 +3,6 @@
 <div id="main-content-wp" class="change-pass-page">
     <div class="section" id="title-page">
         <div class="clearfix">
-            <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a>
             <h3 id="index" class="fl-left">Cập nhật tài khoản</h3>
         </div>
     </div>
@@ -11,7 +10,7 @@
         <div id="sidebar" class="fl-left">
             <ul id="list-cat">
                 <li>
-                    <a href="?modules=users&controllers=index&action=info" title="">Cập nhật thông tin</a>
+                    <a href="?modules=users&controllers=index&action=index" title="">Cập nhật thông tin</a>
                 </li>
                 <li>
                     <a href="?modules=users&controllers=index&action=logout" title="">Thoát</a>

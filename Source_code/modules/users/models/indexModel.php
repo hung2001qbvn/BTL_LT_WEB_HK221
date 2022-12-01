@@ -20,8 +20,26 @@ function insertUser($username, $password, $fullname, $mail, $phone, $address, $c
 
 }
 
+function updateUser($fullname, $username,$mail,$phone,$address){
 
+	$data = [
+		'fullname' => $fullname,
+		'username' => $username,
+		'mail' => $mail,
+		'phone' => $phone,
+		'address' =>$address
+	];
+	return db_update('tbl_customer', $data, "`username` = '{$username}'");
+}
 
+// thay đổi mật khẩu admin
+function changePass($password,$password1){
+
+	$data = [
+		'password' => $password
+	];
+	return db_update('tbl_customer', $data, "`password` = '{$password1}'");
+}
 
 function checkUser($username, $mail, $phone){
 
@@ -41,7 +59,11 @@ function checkUser($username, $mail, $phone){
 }
 
 
+function getUserByUsername($username){
 
+	return db_fetch_array("SELECT * FROM `tbl_admin` WHERE `username` = '{$username}'");
+
+}
 
 
 

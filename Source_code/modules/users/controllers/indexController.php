@@ -12,8 +12,21 @@ function indexAction(){
 
 	if(isset($_GET['report']))
 		echo " <script type='text/javascript'> alert('Bạn cần đăng nhập để mua hàng');</script>";
-
-	load_view('index');
+	if (empty($_SESSION['fullname'])){
+		load_view('index');
+	}
+	else {
+		$data = [
+			[
+			'fullname' => $_SESSION['fullname'],
+			'username' => $_SESSION['username'],
+			'mail' => $_SESSION['mail'],
+			'phone' => $_SESSION['phone'],
+			'address' =>$_SESSION['address'],
+			]
+		];
+		load_view('update',$data);
+	}
 }
 
 
@@ -55,6 +68,11 @@ function loginAction(){
 				$_SESSION['id_customer'] = $dataUser['id'];
 				$_SESSION['username'] = $dataUser['username'];
 				$_SESSION['fullname'] = $dataUser['fullname'];
+				$_SESSION['password'] = $dataUser['password'];
+				$_SESSION['mail'] = $dataUser['mail'];
+				$_SESSION['phone'] = $dataUser['phone'];
+				$_SESSION['address'] = $dataUser['address'];
+				
 				header('location:?modules=home');
 			}else{
 
@@ -66,15 +84,73 @@ function loginAction(){
 		}
 
 	}
-
 	load_view('index');
 
 }
 
+function updateAction(){
 
+    $fullname = $_POST['fullname'];
+    $username = $_POST['username'];
+    $mail = $_POST['mail'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $data = [
+        [
+        'fullname' => $fullname,
+        'username' => $username,
+        'mail' => $mail,
+        'phone' => $phone,
+        'address' =>$address
+        ]
+    ];
+    $num = updateUser($fullname, $username,$mail,$phone,$address);
+    if($num ==1){
+        load_view('update',$data);
+        echo " <script type='text/javascript'> alert('Cập Nhật Thành Công');</script>";
+    }
+    else {
+        load_view('update',$data);
+        echo " <script type='text/javascript'> alert('Thông Tin Đã Tồn Tại');</script>";
+    }
+}
 
+//  load view hiển thị màn thay đổi mật khẩu
+function passAction(){
 
+    load_view('pass');
+}
 
+// đổi mật khẩu tài khoản user
+function changepassAction(){
+
+    if(!empty($_POST['btn_submit'])){
+        $oldPass =  $_POST['pass_old'];
+        $newPass1 = $_POST['pass_new'];
+        $newPass2 = $_POST['confirm_pass'];
+        if(md5($oldPass) == $_SESSION['password']){
+            if($newPass1 == $newPass2 &&$oldPass != $newPass2){
+                if(changePass(md5($newPass1),md5($oldPass))==1){
+                    load_view('pass');
+                    echo " <script type='text/javascript'> alert('Cập Nhật Thành Công');</script>";
+                }
+                else{
+                    load_view('pass');
+                    echo " <script type='text/javascript'> alert('Cập Nhật Không Thành Công');</script>";
+                }
+            }
+            else{
+                    load_view('pass');
+                    echo " <script type='text/javascript'> alert('Mật Khẩu Mới Không Khớp, Hoặc Bị Trùng Mật Khẩu Cũ');</script>";
+                }
+        }
+        else{
+                    load_view('pass');
+                    echo " <script type='text/javascript'> alert('Mật Khẩu Cũ Không Đúng');</script>";
+                }
+            
+    }  
+}
 
 function crateAcountAction(){
 

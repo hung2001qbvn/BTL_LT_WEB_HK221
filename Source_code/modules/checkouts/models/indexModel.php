@@ -28,6 +28,7 @@ function getProductByID($id){
 
 
 function insertOrder($custom_id, $total_price, $total_num_product,$create_date, $note, $payment_method, $status,$id_cart,$time,$code){
+	$dateconfirm = date("d/m/Y",time());
 	$data = [
 		'custom_id ' =>$custom_id ,
 		'total_price' => $total_price,
@@ -38,7 +39,8 @@ function insertOrder($custom_id, $total_price, $total_num_product,$create_date, 
 		'status' => $status,
 		'id_cart' => $id_cart,
 		'time' => $time,
-		'code' => $code
+		'code' => $code,
+		'date_confirm' => $dateconfirm
 	];
 	db_insert("tbl_order", $data);
 
