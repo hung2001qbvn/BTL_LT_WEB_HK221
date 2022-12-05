@@ -22,19 +22,19 @@
                 <div class="section-detail">
                     <form method="post" action="?modules=users&controllers=index&action=changepass">
                         <div class="form-row clearfix">
-                            <div class="form-col fl-left">
+                            <div class="width-full fl-left">
                                 <label for="old-pass">Mật khẩu cũ</label>
                                 <input class="form-control" type="password" name="pass_old" id="pass-old">
                             </div>
                         </div>
                         <div class="form-row clearfix">
-                            <div class="form-col fl-left">
+                            <div class="width-full fl-left">
                                 <label for="new-pass">Mật khẩu mới</label>
                                 <input class="form-control" type="password" name="pass_new" id="pass-new">
                             </div>
                         </div>
                         <div class="form-row clearfix">
-                            <div class="form-col fl-left">
+                            <div class="width-full fl-left">
                                 <label for="confirm-pass">Xác nhận mật khẩu</label>
                                 <input class="form-control" type="password" name="confirm_pass" id="confirm-pass">
                             </div>

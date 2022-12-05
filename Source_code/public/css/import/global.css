@@ -16,6 +16,12 @@ img{
     display: block;
 }
 .fl-left{ float: left;}
+
+.width-full {
+    width: 100%;
+    padding-right: 0;
+}
+
 .fl-right{ float: right;}
 #btn-top{
     position: fixed;

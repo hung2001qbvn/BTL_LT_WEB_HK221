@@ -24,31 +24,31 @@
                         <?php if(!empty($data)) foreach ($data as  $value) {?>
                             <div class="section-detail">
 									<div class="form-row clearfix">
-										<div class="form-col fl-left">
+										<div class="fl-left width-full">
                                             <label for="display-name">Tên hiển thị</label>
                                             <input class="form-control" type="text" name="fullname" id="display-name" value="<?php echo $value['fullname']; ?>">
 										</div> 
 									</div>
                                     <div class="form-row clearfix">
-										<div class="form-col fl-left">
+										<div class="fl-left width-full">
                                             <label for="username">Tên đăng nhập</label>
-                                            <input class="form-control" disabled="disabled" type="text" name="username" id="username"  readonly="readonly" value="<?php echo $value['username']; ?>">
+                                            <input class="form-control" type="text" name="username" id="username"  readonly="readonly" value="<?php echo $value['username']; ?>">
 										</div>
 									</div>
                                     <div class="form-row clearfix">
-										<div class="form-col fl-left">
+										<div class="fl-left width-full">
                                             <label for="mail">Email</label>
                                             <input class="form-control" type="mail" name="mail" id="mail" value="<?php echo $value['mail']; ?>">
 										</div>
 									</div>
                                     <div class="form-row clearfix">
-										<div class="form-col fl-left">
+										<div class="fl-left width-full">
                                             <label for="tel">Số điện thoại</label>
                                             <input class="form-control" type="tel" name="phone" id="tel" value="<?php echo $value['phone']; ?>">
 										</div>
 									</div>
                                     <div class="form-row clearfix">
-										<div class="form-col fl-left">
+										<div class="fl-left width-full">
                                             <label for="address">Địa chỉ</label>
                                             <textarea class="form-control" name="address" id="address"><?php echo $value['address']; ?></textarea>
 										</div>
@@ -58,13 +58,12 @@
                         <?php }; ?>
 
                         <button type="submit" name="btn_submit" id="btn-submit" style="height: 40px;
-    border-radius: 60px;
-    width: 150px;
-    color: green;
-    border-color: white;
-    color: white;
-    background-color: #48ad48;">Cập nhật</button>
-
+                            border-radius: 60px;
+                            width: 150px;
+                            color: green;
+                            border-color: white;
+                            color: white;
+                            background-color: #48ad48;">Cập nhật</button>
                     </form>
                 </div>
             </div>
