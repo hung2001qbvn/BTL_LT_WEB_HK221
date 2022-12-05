@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="main-content-wp" class="info-account-page">
+<div id="main-content-wp" class="info-account-page wp-inner">
     <div class="section" id="title-page">
         <div class="clearfix">
             <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a>

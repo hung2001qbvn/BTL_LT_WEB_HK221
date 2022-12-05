@@ -131,6 +131,8 @@
     display: block;
     text-align: center;
     color: #222;
+    overflow: hidden;
+    white-space: nowrap;
     font-family: 'Roboto Medium';
     margin: 15px 0px 5px 0px;
     line-height: normal;

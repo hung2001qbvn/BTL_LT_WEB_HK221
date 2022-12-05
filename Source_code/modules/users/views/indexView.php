@@ -42,6 +42,11 @@
 											<input style="height: 38px;width: 250px;border: 1px solid #cccccc;" type="password" name="password" id="address" class="form-control">
 										</div>
 									</div>
+									<div class="form-row clearfix">
+										<div class="form-col fl-left">
+											<a href="admin">Đăng nhập với tư cách QTV</a>
+										</div>
+									</div>
 							</div>
 							<input type="submit" name="btn_submit" id="btn-submit" value="Đăng nhập" style="height: 40px;
 																								border-radius: 60px;
@@ -74,7 +79,7 @@
 						</div>
 						<div class="form-row clearfix">
 							<div class="form-col fl-left">
-								<label for="address">mail</label>
+								<label for="address">Email</label>
 								<input type="text" name="mail" id="address" class="form-control">
 							</div>
 							<div class="form-col fl-right">
