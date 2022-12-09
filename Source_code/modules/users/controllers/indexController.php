@@ -16,7 +16,21 @@ function indexAction(){
 		} else if ($_GET['report'] == 2) {
 			echo " <script type='text/javascript'> alert('Bạn cần đăng nhập để bình luận');</script>";
 		}
-
+	if (empty($_SESSION['fullname'])){
+		load_view('index');
+	}
+	else {
+		$data = [
+			[
+			'fullname' => $_SESSION['fullname'],
+			'username' => $_SESSION['username'],
+			'mail' => $_SESSION['mail'],
+			'phone' => $_SESSION['phone'],
+			'address' =>$_SESSION['address'],
+			]
+		];
+		load_view('update',$data);
+	}
 	load_view('index');
 }
 
