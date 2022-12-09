@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2022 at 03:35 PM
+-- Generation Time: Dec 08, 2022 at 07:23 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -104,6 +104,13 @@ CREATE TABLE `tbl_cart` (
   `total_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbl_cart`
+--
+
+INSERT INTO `tbl_cart` (`id`, `id_customer`, `total_num`, `total_price`) VALUES
+(11, 16, 1, 34990000);
+
 -- --------------------------------------------------------
 
 --
@@ -132,6 +139,40 @@ INSERT INTO `tbl_category` (`id`, `name`, `code`, `image`, `description`, `creat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_comment`
+--
+
+CREATE TABLE `tbl_comment` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `comment` varchar(3000) NOT NULL,
+  `refer` int(11) NOT NULL,
+  `create_date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_comment`
+--
+
+INSERT INTO `tbl_comment` (`id`, `customer_id`, `product_id`, `comment`, `refer`, `create_date`) VALUES
+(25, 86, 48, 'Chào anh \r\nDạ máy có hỗ trợ nhân bản ứng dụng đó ạ \r\nThông tin đến  anh', -1, '08/12/2022'),
+(29, 86, 48, 'E muốn mua góp mà không có cccd , dùng cmnd có đc k ạ\r\n', -1, '08/12/2022'),
+(30, 86, 48, 'Dạ chào chị.\r\nĐể tham gia trả góp bên em mình cần đủ 18-65 tuổi có CMND/CCCD ạ.\r\nThông tin đến chị.', -1, '08/12/2022'),
+(33, 86, 48, 'Không chấp nhận', 25, '08/12/2022'),
+(34, 86, 48, 'Một hai ba', 29, '08/12/2022'),
+(36, 81, 48, 'Vậy hả bạn', 25, '08/12/2022'),
+(38, 81, 48, 'Không có căn cước mà đòi mua hả em', 29, '08/12/2022'),
+(39, 81, 48, 'Mình không tham gia trả góp đâu ạ', 30, '08/12/2022'),
+(40, 81, 48, 'Bốn năm sáu', 29, '08/12/2022'),
+(41, 81, 48, 'Bình luận mới Chào anh Dạ máy có hỗ trợ nhân bản ứng dụng đó ạ Thông tin đến anh', -1, '08/12/2022'),
+(42, 81, 48, 'Vivo dường như ngày càng chú trọng vào vẻ đẹp của từng sản phẩm khi có khá nhiều mẫu smartphone mới được trình làng với bề ngoài hết sức đẹp mắt, nổi bật trong khoảng thời gian gần đây (09/2022)', -1, '08/12/2022'),
+(43, 24, 48, 'Tư vấn giúp em con này với ạ', -1, '08/12/2022'),
+(44, 24, 48, 'Tư vấn nè', 43, '08/12/2022');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_customer`
 --
 
@@ -146,6 +187,112 @@ CREATE TABLE `tbl_customer` (
   `create_date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbl_customer`
+--
+
+INSERT INTO `tbl_customer` (`id`, `username`, `password`, `fullname`, `mail`, `phone`, `address`, `create_date`) VALUES
+(16, 'taikhoan1', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 1', 'taikhoan1@gmail.com', '0935888101', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(17, 'taikhoan2', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 2', 'taikhoan2@gmail.com', '0935888102', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(18, 'taikhoan3', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 3', 'taikhoan3@gmail.com', '0935888103', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(19, 'taikhoan4', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 4', 'taikhoan4@gmail.com', '0935888104', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(20, 'taikhoan5', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 5', 'taikhoan5@gmail.com', '0935888105', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(21, 'taikhoan6', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 6', 'taikhoan6@gmail.com', '0935888106', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(22, 'taikhoan7', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 7', 'taikhoan7@gmail.com', '0935888107', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(23, 'taikhoan8', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 8', 'taikhoan8@gmail.com', '0935888108', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(24, 'taikhoan9', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 9', 'taikhoan9@gmail.com', '0935888109', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(25, 'taikhoan10', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 10', 'taikhoan10@gmail.com', '0935888110', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(26, 'taikhoan11', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 11', 'taikhoan11@gmail.com', '0935888111', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(27, 'taikhoan12', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 12', 'taikhoan12@gmail.com', '0935888112', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(28, 'taikhoan13', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 13', 'taikhoan13@gmail.com', '0935888113', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(29, 'taikhoan14', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 14', 'taikhoan14@gmail.com', '0935888114', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(30, 'taikhoan15', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 15', 'taikhoan15@gmail.com', '0935888115', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(31, 'taikhoan16', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 16', 'taikhoan16@gmail.com', '0935888116', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(32, 'taikhoan17', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 17', 'taikhoan17@gmail.com', '0935888117', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(33, 'taikhoan18', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 18', 'taikhoan18@gmail.com', '0935888118', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(34, 'taikhoan19', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 19', 'taikhoan19@gmail.com', '0935888119', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(35, 'taikhoan20', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 20', 'taikhoan20@gmail.com', '0935888120', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(36, 'taikhoan21', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 21', 'taikhoan21@gmail.com', '0935888121', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(37, 'taikhoan22', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 22', 'taikhoan22@gmail.com', '0935888122', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(38, 'taikhoan23', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 23', 'taikhoan23@gmail.com', '0935888123', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(39, 'taikhoan24', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 24', 'taikhoan24@gmail.com', '0935888124', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(40, 'taikhoan25', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 25', 'taikhoan25@gmail.com', '0935888125', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(41, 'taikhoan26', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 26', 'taikhoan26@gmail.com', '0935888126', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(42, 'taikhoan27', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 27', 'taikhoan27@gmail.com', '0935888127', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(43, 'taikhoan28', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 28', 'taikhoan28@gmail.com', '0935888128', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(44, 'taikhoan29', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 29', 'taikhoan29@gmail.com', '0935888129', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(45, 'taikhoan30', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 30', 'taikhoan30@gmail.com', '0935888130', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(46, 'taikhoan31', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 31', 'taikhoan31@gmail.com', '0935888131', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(47, 'taikhoan32', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 32', 'taikhoan32@gmail.com', '0935888132', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(48, 'taikhoan33', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 33', 'taikhoan33@gmail.com', '0935888133', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(49, 'taikhoan34', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 34', 'taikhoan34@gmail.com', '0935888134', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(50, 'taikhoan35', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 35', 'taikhoan35@gmail.com', '0935888135', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(51, 'taikhoan36', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 36', 'taikhoan36@gmail.com', '0935888136', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(52, 'taikhoan37', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 37', 'taikhoan37@gmail.com', '0935888137', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(53, 'taikhoan38', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 38', 'taikhoan38@gmail.com', '0935888138', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(54, 'taikhoan39', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 39', 'taikhoan39@gmail.com', '0935888139', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(55, 'taikhoan40', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 40', 'taikhoan40@gmail.com', '0935888140', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(56, 'taikhoan41', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 41', 'taikhoan41@gmail.com', '0935888141', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(57, 'taikhoan42', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 42', 'taikhoan42@gmail.com', '0935888142', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(58, 'taikhoan43', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 43', 'taikhoan43@gmail.com', '0935888143', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(59, 'taikhoan44', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 44', 'taikhoan44@gmail.com', '0935888144', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(60, 'taikhoan45', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 45', 'taikhoan45@gmail.com', '0935888145', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(61, 'taikhoan46', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 46', 'taikhoan46@gmail.com', '0935888146', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(62, 'taikhoan47', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 47', 'taikhoan47@gmail.com', '0935888147', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(63, 'taikhoan48', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 48', 'taikhoan48@gmail.com', '0935888148', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(64, 'taikhoan49', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 49', 'taikhoan49@gmail.com', '0935888149', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(65, 'taikhoan50', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 50', 'taikhoan50@gmail.com', '0935888150', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(66, 'taikhoan51', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 51', 'taikhoan51@gmail.com', '0935888151', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(67, 'taikhoan52', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 52', 'taikhoan52@gmail.com', '0935888152', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(68, 'taikhoan53', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 53', 'taikhoan53@gmail.com', '0935888153', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(69, 'taikhoan54', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 54', 'taikhoan54@gmail.com', '0935888154', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(70, 'taikhoan55', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 55', 'taikhoan55@gmail.com', '0935888155', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(71, 'taikhoan56', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 56', 'taikhoan56@gmail.com', '0935888156', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(72, 'taikhoan57', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 57', 'taikhoan57@gmail.com', '0935888157', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(73, 'taikhoan58', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 58', 'taikhoan58@gmail.com', '0935888158', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(74, 'taikhoan59', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 59', 'taikhoan59@gmail.com', '0935888159', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(75, 'taikhoan60', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 60', 'taikhoan60@gmail.com', '0935888160', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(76, 'taikhoan61', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 61', 'taikhoan61@gmail.com', '0935888161', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(77, 'taikhoan62', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 62', 'taikhoan62@gmail.com', '0935888162', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(78, 'taikhoan63', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 63', 'taikhoan63@gmail.com', '0935888163', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(79, 'taikhoan64', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 64', 'taikhoan64@gmail.com', '0935888164', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(80, 'taikhoan65', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 65', 'taikhoan65@gmail.com', '0935888165', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(81, 'taikhoan66', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 66', 'taikhoan66@gmail.com', '0935888166', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(82, 'taikhoan67', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 67', 'taikhoan67@gmail.com', '0935888167', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(83, 'taikhoan68', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 68', 'taikhoan68@gmail.com', '0935888168', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(84, 'taikhoan69', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 69', 'taikhoan69@gmail.com', '0935888169', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(85, 'taikhoan70', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 70', 'taikhoan70@gmail.com', '0935888170', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(86, 'taikhoan71', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 71', 'taikhoan71@gmail.com', '0935888171', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(87, 'taikhoan72', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 72', 'taikhoan72@gmail.com', '0935888172', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(88, 'taikhoan73', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 73', 'taikhoan73@gmail.com', '0935888173', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(89, 'taikhoan74', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 74', 'taikhoan74@gmail.com', '0935888174', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(90, 'taikhoan75', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 75', 'taikhoan75@gmail.com', '0935888175', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(91, 'taikhoan76', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 76', 'taikhoan76@gmail.com', '0935888176', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(92, 'taikhoan77', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 77', 'taikhoan77@gmail.com', '0935888177', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(93, 'taikhoan78', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 78', 'taikhoan78@gmail.com', '0935888178', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(94, 'taikhoan79', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 79', 'taikhoan79@gmail.com', '0935888179', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(95, 'taikhoan80', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 80', 'taikhoan80@gmail.com', '0935888180', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(96, 'taikhoan81', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 81', 'taikhoan81@gmail.com', '0935888181', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(97, 'taikhoan82', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 82', 'taikhoan82@gmail.com', '0935888182', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(98, 'taikhoan83', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 83', 'taikhoan83@gmail.com', '0935888183', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(99, 'taikhoan84', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 84', 'taikhoan84@gmail.com', '0935888184', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(100, 'taikhoan85', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 85', 'taikhoan85@gmail.com', '0935888185', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(101, 'taikhoan86', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 86', 'taikhoan86@gmail.com', '0935888186', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(102, 'taikhoan87', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 87', 'taikhoan87@gmail.com', '0935888187', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(103, 'taikhoan88', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 88', 'taikhoan88@gmail.com', '0935888188', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(104, 'taikhoan89', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 89', 'taikhoan89@gmail.com', '0935888189', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(105, 'taikhoan90', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 90', 'taikhoan90@gmail.com', '0935888190', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(106, 'taikhoan91', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 91', 'taikhoan91@gmail.com', '0935888191', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(107, 'taikhoan92', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 92', 'taikhoan92@gmail.com', '0935888192', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(108, 'taikhoan93', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 93', 'taikhoan93@gmail.com', '0935888193', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(109, 'taikhoan94', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 94', 'taikhoan94@gmail.com', '0935888194', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(110, 'taikhoan95', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 95', 'taikhoan95@gmail.com', '0935888195', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(111, 'taikhoan96', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 96', 'taikhoan96@gmail.com', '0935888196', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(112, 'taikhoan97', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 97', 'taikhoan97@gmail.com', '0935888197', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(113, 'taikhoan98', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 98', 'taikhoan98@gmail.com', '0935888198', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(114, 'taikhoan99', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 99', 'taikhoan99@gmail.com', '0935888199', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022'),
+(115, 'taikhoan100', 'e10adc3949ba59abbe56e057f20f883e', 'Tai Khoan 100', 'taikhoan100@gmail.com', '0935888200', 'KTX khu A dai hoc quoc gia, Linh Trung, Thu Duc, TPHCM', '05/12/2022');
+
 -- --------------------------------------------------------
 
 --
@@ -159,6 +306,13 @@ CREATE TABLE `tbl_detail_cart` (
   `num_total` int(11) NOT NULL,
   `sub_total_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_detail_cart`
+--
+
+INSERT INTO `tbl_detail_cart` (`id`, `id_cart`, `id_product`, `num_total`, `sub_total_price`) VALUES
+(80, 11, 50, 1, 34990000);
 
 -- --------------------------------------------------------
 
@@ -318,6 +472,14 @@ ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_comment`
+--
+ALTER TABLE `tbl_comment`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `customer_id` (`customer_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- Indexes for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
@@ -387,7 +549,7 @@ ALTER TABLE `tbl_brand`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
@@ -396,16 +558,22 @@ ALTER TABLE `tbl_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `tbl_comment`
+--
+ALTER TABLE `tbl_comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_cart`
 --
 ALTER TABLE `tbl_detail_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `tbl_detail_order`
@@ -440,6 +608,13 @@ ALTER TABLE `tbl_slider`
 --
 ALTER TABLE `tbl_cart`
   ADD CONSTRAINT `tbl_cart_ibfk_1` FOREIGN KEY (`id_customer`) REFERENCES `tbl_customer` (`id`);
+
+--
+-- Constraints for table `tbl_comment`
+--
+ALTER TABLE `tbl_comment`
+  ADD CONSTRAINT `tbl_comment_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `tbl_customer` (`id`),
+  ADD CONSTRAINT `tbl_comment_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `tbl_product` (`id`);
 
 --
 -- Constraints for table `tbl_detail_cart`

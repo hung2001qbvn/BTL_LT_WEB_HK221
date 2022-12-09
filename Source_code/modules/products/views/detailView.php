@@ -60,7 +60,7 @@
                 </div>
                 <div class="section-detail">
                     <ul class="list-item">
-                        <?php if(!empty($data{'2'})) foreach ($data['2'] as  $value) {?>
+                        <?php if(!empty($data['2'])) foreach ($data['2'] as  $value) {?>
 
                         <li>
                             <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title="" class="thumb">
@@ -82,8 +82,70 @@
                     </ul>
                 </div>
             </div>
+            <div class="section comment-section" id="same-category-wp">
+                <div class="section-head">
+                    <h3 class="section-title">Bình luận</h3>
+                </div>
+                <form id="comment-section" action="<?php $id = $_GET['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=products&action=addComment&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=2" ;echo $urlll;?>" method="POST">
+                    <textarea class="form-control" rows="3" name="comment" placeholder="Mời bạn để lại bình luận"></textarea>
+                    <button type="submit" class="send-comment-btn">GỬI BÌNH LUẬN</button>
+                </form>
+                <?php
+                ?>
+                <?php
+                foreach ($data[3] as $value) {
+                    $id = $_GET['id']; 
+                    if(!empty($_SESSION['id_customer'])) {
+                        $urlll ="?modules=products&action=addComment&id=$id";
+                    } else {
+                        $urlll ="?modules=users&controllers=index&action=index&report=2";
+                    }
+                    if ($value['refer'] == -1) {
+                ?>
+                <div class="my-3" id="comment-<?php echo $value['id'] ?>">
+                    <div class="fw-bold"><?php echo $value['fullname'] ?></div>
+                    <div><?php echo $value['create_date'] ?></div>
+                    <div><?php echo $value['comment'] ?></div>
+                    <div class="answer-small-btn" id="rep-btn-<?php echo $value['id'] ?>" onclick="display(this)">Trả lời</div>
+                    <form class="w-50 ms-4" id="rep-comment-<?php echo $value['id'] ?>" action="<?php echo $urlll ?>" method="POST" style="display: none;">
+                        <input type="hidden" name="refer" value="<?php echo $value['id'] ?>">
+                        <textarea class="form-control" rows="3" name="comment" placeholder="Mời bạn để lại bình luận"></textarea>
+                        <button type="submit" class="send-comment-btn">GỬI</button>
+                    </form>
+                </div>
+                <?php
+                    } else {
+                ?>
+                        <div class="my-3 answer-comment-field ms-4" id="comment-<?php echo $value['id'] ?>">
+                        <div class="fw-bold"><?php echo $value['fullname'] ?></div>
+                        <div><?php echo $value['create_date'] ?></div>
+                        <div><?php echo $value['comment'] ?></div>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+                <script>
+                    let start = <?php echo $data[3][0]['id']?>;
+                    let end = <?php echo $data[3][0]['id'] + count($data[3])?>;
+                    let display_comment_id = -1;
+                    
+                    function display(id) {
+                        console.log(id);
+                        let tmp = id.getAttribute('id');
+                        let len = tmp.length;
+                        rep_comment = document.getElementById("rep-comment-" + tmp.slice(8, len));
+                        rep_comment.setAttribute("style", "display: block;");
+                        if (display_comment_id != -1) {
+                            rep_comment = document.getElementById("rep-comment-" + display_comment_id);
+                            rep_comment.setAttribute("style", "display: none;");
+                        }
+                        display_comment_id = tmp.slice(8, len);
+                    }
+                </script>
+            </div>
         </div>
-<?php get_sidebar(); ?>
+        <?php get_sidebar(); ?>
     </div>
 </div>
 

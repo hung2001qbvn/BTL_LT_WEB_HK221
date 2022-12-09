@@ -11,22 +11,13 @@ function construct() {
 function indexAction(){
 
 	if(isset($_GET['report']))
-		echo " <script type='text/javascript'> alert('Bạn cần đăng nhập để mua hàng');</script>";
-	if (empty($_SESSION['fullname'])){
-		load_view('index');
-	}
-	else {
-		$data = [
-			[
-			'fullname' => $_SESSION['fullname'],
-			'username' => $_SESSION['username'],
-			'mail' => $_SESSION['mail'],
-			'phone' => $_SESSION['phone'],
-			'address' =>$_SESSION['address'],
-			]
-		];
-		load_view('update',$data);
-	}
+		if ($_GET['report'] == 1) {
+			echo " <script type='text/javascript'> alert('Bạn cần đăng nhập để mua hàng');</script>";
+		} else if ($_GET['report'] == 2) {
+			echo " <script type='text/javascript'> alert('Bạn cần đăng nhập để bình luận');</script>";
+		}
+
+	load_view('index');
 }
 
 
@@ -152,7 +143,7 @@ function changepassAction(){
     }  
 }
 
-function crateAcountAction(){
+function createAccountAction(){
 
 	$username;
 	$password;
@@ -162,7 +153,7 @@ function crateAcountAction(){
 	$address;
 	$err = array();
 
-	if(!empty($_POST['btn_submit_crate'])){
+	if(!empty($_POST['btn_submit_create'])){
 
 		if (!empty($_POST['username'])) {
 			$username = $_POST['username'];

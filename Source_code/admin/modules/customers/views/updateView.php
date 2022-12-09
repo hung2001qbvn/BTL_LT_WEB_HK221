@@ -18,7 +18,6 @@
                             <input type="tel" style="width:50%;" name="phone" id="tel" value="<?php echo $value['phone']; ?>">
                             <label for="address">Địa chỉ</label>
                             <textarea name="address" style="width:50%;" id="address"><?php echo $value['address']; ?></textarea>
-                            
                         <?php }; ?>
 
                         <button type="submit" name="btn_submit" id="btn-submit">Cập nhật</button>

@@ -146,7 +146,7 @@ function listAction(){
 	};
 
 	$data = [$res, $num, $page];
-	load_view('list',$data);;
+	load_view('list',$data);
 }
 
 function updateAction() {

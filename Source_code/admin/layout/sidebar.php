@@ -37,6 +37,9 @@
                 <li class="nav-item">
                     <a href="?modules=products&controllers=index&action=list" title="" class="nav-link aha">Danh sách</a>
                 </li>
+                <li class="nav-item">
+                    <a href="?modules=comment&controllers=index&action=list" title="" class="nav-link aha">Quản lí bình luận</a>
+                </li>
             </ul>
         </li>
         <li class="nav-item">

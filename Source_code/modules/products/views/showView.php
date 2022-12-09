@@ -19,7 +19,6 @@
                 <div class="section-head clearfix">
                     <h3 class="section-title fl-left"><?php echo($data['0']['name']) ; ?></h3>
                     <div class="filter-wp fl-right">
-                        <p class="desc">Hiển thị 45 trên 50 sản phẩm</p>
                         <div class="form-filter">
                             <form method="POST" action="">
                                 <select name="select">

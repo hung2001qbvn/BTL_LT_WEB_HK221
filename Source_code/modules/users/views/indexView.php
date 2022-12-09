@@ -65,7 +65,7 @@
 			</div>
 			<div class="section-detail">
 	
-				<form method="POST" action="?modules=users&controllers=index&action=crateAcount" name="form-checkout">
+				<form method="POST" action="?modules=users&controllers=index&action=createAccount" name="form-checkout">
 	
 						<div class="form-row clearfix">
 							<div class="form-col fl-left">
@@ -95,7 +95,7 @@
 								<textarea name="address" class="form-control"></textarea>
 							</div>
 						</div>
-						<input type="submit" name="btn_submit_crate" id="btn-submit" value="Tạo" style="height: 40px;
+						<input type="submit" name="btn_submit_create" id="btn-submit" value="Tạo" style="height: 40px;
 																								border-radius: 60px;
 																								width: 150px;
 																								color: green;
