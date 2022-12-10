@@ -44,7 +44,7 @@
 									</div>
 									<div class="form-row clearfix">
 										<div class="form-col fl-left">
-											<a href="admin">Đăng nhập với tư cách QTV</a>
+											<a href="admin/?modules=users&controller=index&action=login">Đăng nhập với tư cách QTV</a>
 										</div>
 									</div>
 							</div>
