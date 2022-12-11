@@ -94,7 +94,7 @@
                     <h3 class="section-title">Bình luận</h3>
                 </div>
                 <form id="comment-section"
-                    action="<?php $id = $_GET['id']; if($_SESSION['is_login']) $urlll ="?modules=products&action=addComment&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=2" ;echo $urlll;?>"
+                    action="<?php $id = $_GET['id']; if(!empty($_SESSION['is_login'])) $urlll ="?modules=products&action=addComment&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=2" ;echo $urlll;?>"
                     method="POST">
                     <textarea class="form-control" rows="3" name="comment"
                         placeholder="Mời bạn để lại bình luận"></textarea>
@@ -105,7 +105,7 @@
                 <?php
                 foreach ($data[3] as $value) {
                     $id = $_GET['id']; 
-                    if($_SESSION['is_login']) {
+                    if(!empty($_SESSION['is_login'])) {
                         $urlll ="?modules=products&action=addComment&id=$id";
                     } else {
                         $urlll ="?modules=users&controllers=index&action=index&report=2";

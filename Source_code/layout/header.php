@@ -51,12 +51,12 @@
                                 </li>
 
                                 <li>
-                                    <?php if ($_SESSION['is_admin']){ ?>
+                                    <?php if (!empty($_SESSION['is_admin'])){ ?>
                                     <a href="admin/?modules=home"> <?php if (!empty($_SESSION['fullname'])) 
                                         echo $_SESSION['fullname'];
                                             else echo "<span class=\"ti-user\">"."Tài khoản"."</span>"; ?></a>
                                     <?php }; ?>
-                                    <?php if(!$_SESSION['is_admin']){ ?><a href="?modules=users&action=index">
+                                    <?php if(empty($_SESSION['is_admin'])){ ?><a href="?modules=users&action=index">
                                         <?php if (!empty($_SESSION['fullname'])) 
                                         echo $_SESSION['fullname'];
                                             else echo "<span class=\"ti-user\">"."Tài khoản"."</span>"; ?></a>
