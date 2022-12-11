@@ -1,9 +1,13 @@
+<?php $data = get_store_info_by_id();?>
+
+
 <div id="footer-wp">
     <div id="foot-body">
         <div class="wp-inner clearfix">
             <div class="block" id="info-company">
                 <h3 class="title">SMARTSHOP XL</h3>
-                <p class="desc">SMARTSHOP XL luôn cung cấp luôn là sản phẩm chính hãng có thông tin rõ ràng, chính sách ưu đãi cực lớn cho khách hàng có thẻ thành viên.</p>
+                <p class="desc">SMARTSHOP XL luôn cung cấp luôn là sản phẩm chính hãng có thông tin rõ ràng, chính sách
+                    ưu đãi cực lớn cho khách hàng có thẻ thành viên.</p>
                 <div id="payment">
                     <div class="thumb">
                         <img src="public/images/img-foot.png" alt="">
@@ -14,13 +18,13 @@
                 <h3 class="title">Thông tin cửa hàng</h3>
                 <ul class="list-item">
                     <li>
-                        <p>KTX khu A ĐHQG, Đông Hòa, Dĩ An, Bình Dương</p>
+                        <p id="address"><?php echo $data[0]['address']?></p>
                     </li>
                     <li>
-                        <p>0123498765 - 0918333444</p>
+                        <p id="phone_number"><?php echo $data[0]['phone_number']?></p>
                     </li>
                     <li>
-                        <p>smartshopXL@gmail.com</p>
+                        <p id="email"><?php echo $data[0]['email']?></p>
                     </li>
                 </ul>
             </div>
@@ -107,6 +111,8 @@
         </ul>
     </div>
 </div>
-<div id="btn-top"><img src="public/images/icon-to-top.png" alt=""/></div>
+<div id="btn-top"><img src="public/images/icon-to-top.png" alt="" /></div>
 </body>
+
+
 </html>

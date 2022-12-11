@@ -11,7 +11,7 @@ session_start();
  * 
  */
 
-$config['base_url'] = "http://localhost/STORE/";
+$config['base_url'] = "http://localhost/Source_code/";
 
 
 $config['default_module'] = 'home';

@@ -9,15 +9,12 @@ function get_controller() {
     return $controller;
 }
 
-// get Module name
-
 function get_module() {
     global $config;
     $module = isset($_GET['modules']) ? $_GET['modules'] : $config['default_module'];
     return $module;
 }
 
-//get Action name
 function get_action() {
     global $config;
     $action = isset($_GET['action']) ? $_GET['action'] : $config['default_action'];
@@ -50,13 +47,6 @@ function load($type, $name) {
         echo "{$type}:{$name} không tồn tại";
     }
 }
-
-/*
- * -----------------------------
- * callFunction
- * -----------------------------
- * Gọi đến hàm theo tham số biến
- */
 
 function call_function($list_function = array()) {
     if (is_array($list_function)) {

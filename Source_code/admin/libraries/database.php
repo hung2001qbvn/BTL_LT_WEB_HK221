@@ -12,7 +12,7 @@ function db_connect() {
     
 }
 
-//Thực thi chuổi truy vấn
+//Thực thi chuỗi truy vấn
 function db_query($query_string) {
     global $conn;
     $result = mysqli_query($conn, $query_string);
