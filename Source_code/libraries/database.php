@@ -128,3 +128,7 @@ function db_sql_error($message, $query_string = "") {
     echo $msgbox_messages;
     exit;
 }
+
+function get_store_info_by_id(){
+	return db_fetch_array("SELECT * FROM `tbl_store_info` WHERE `id` = '1';");
+}

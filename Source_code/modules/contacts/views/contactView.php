@@ -1,5 +1,8 @@
+<?php $data = get_store_info_by_id();?>
+
+
 <?php get_header(); ?>
-				<div id="main-content-wp" class="checkout-page">
+<div id="main-content-wp" class="checkout-page">
     <div class="section" id="breadcrumb-wp">
         <div class="wp-inner">
             <div class="section-detail">
@@ -15,7 +18,7 @@
         </div>
     </div>
     <div id="wrapper" class="wp-inner clearfix">
-        <div class="section" id="customer-info-wp" >
+        <div class="section" id="customer-info-wp">
             <div class="section-head">
                 <h1 class="section-title">Đóng Góp ý kiến của khách hàng</h1>
             </div>
@@ -47,7 +50,8 @@
                             <textarea name="note"></textarea>
                         </div>
                     </div>
-                    <input type="submit" name="btn_submit_crate" id="btn-submit" value="Gửi" style="height: 40px;
+                    <input type="submit" name="btn_submit_crate" id="btn-submit" value="Gửi"
+                        style="height: 40px;
                                                                                                 border-radius: 60px;
                                                                                                 width: 150px;
                                                                                                 color: green;
@@ -62,10 +66,11 @@
                 <h1 class="section-title">Thông tin liên hệ</h1>
             </div>
 
-                    <div class="map">
-                        <iframe width="600" height="350" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Vietnam&amp;aq=&amp;sll=14.058324,108.277199&amp;sspn=21.827722,43.286133&amp;ie=UTF8&amp;hq=&amp;hnear=Vietnam&amp;ll=14.058324,108.277199&amp;spn=8.883583,21.643066&amp;t=m&amp;z=6&amp;output=embed">
-                        </iframe>
-                  </div>
+            <div class="map">
+                <iframe width="600" height="350"
+                    src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Vietnam&amp;aq=&amp;sll=14.058324,108.277199&amp;sspn=21.827722,43.286133&amp;ie=UTF8&amp;hq=&amp;hnear=Vietnam&amp;ll=14.058324,108.277199&amp;spn=8.883583,21.643066&amp;t=m&amp;z=6&amp;output=embed">
+                </iframe>
+            </div>
 
             <div class="section-detail">
                 <table class="shop-table">
@@ -76,16 +81,19 @@
                     </thead>
                     <tbody>
                         <tr class="cart-item">
-                            <td class="product-name">KTX khu A ĐHQG, Đông Hòa, Dĩ An, Bình Dương<strong class="product-quantity"></strong></td>
+                            <td class="product-name"><?php echo $data[0]['address']?><strong
+                                    class="product-quantity"></strong></td>
                         </tr>
                         <tr class="cart-item">
-                            <td class="product-name">Mobile: +038 750 3640 <strong class="product-quantity"></strong></td>
+                            <td class="product-name">Mobile: <?php echo $data[0]['phone_number']?> <strong
+                                    class="product-quantity"></strong>
+                            </td>
                         </tr>
                         <tr class="cart-item">
                             <td class="product-name">Fax: 1-714-252-0026<strong class="product-quantity"></strong></td>
                         </tr>
                         <tr class="order-total">
-                            <td><strong class="total-price">Email: smartshopPTN@gmail.com</strong></td>
+                            <td>Email: <?php echo $data[0]['email']?></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -93,32 +101,36 @@
                             <td><strong class="total-price">Mạng xã hội</strong></td>
                         </tr>
                         <tr class="order-total">
-                        	<td>
-                        		<strong class="total-price">
-                        			<ul>
-										<li style="display: inline-block; padding: 0px 20px; font-size: 50px;">
-											<a style="color:gray;" href="https://www.facebook.com/MetaVietnam/"><i class="fa fa-facebook"></i></a>
-										</li >
-										<li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
-											<a style="color:gray;" href="https://twitter.com/?lang=vi"><i class="fa fa-twitter"></i></a>
-										</li>
-										<li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
-											<a style="color:gray;" href="https://www.google.com.vn/?hl=vi"><i class="fa fa-google-plus"></i></a>
-										</li>
-										<li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
-											<a style="color:gray;" href="https://www.youtube.com/"><i  class="fa fa-youtube"></i></a>
-										</li>
-									</ul>
-                        		</strong>
-                        	</td>
-                           	
+                            <td>
+                                <strong class="total-price">
+                                    <ul>
+                                        <li style="display: inline-block; padding: 0px 20px; font-size: 50px;">
+                                            <a style="color:gray;" href="https://www.facebook.com/MetaVietnam/"><i
+                                                    class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
+                                            <a style="color:gray;" href="https://twitter.com/?lang=vi"><i
+                                                    class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
+                                            <a style="color:gray;" href="https://www.google.com.vn/?hl=vi"><i
+                                                    class="fa fa-google-plus"></i></a>
+                                        </li>
+                                        <li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
+                                            <a style="color:gray;" href="https://www.youtube.com/"><i
+                                                    class="fa fa-youtube"></i></a>
+                                        </li>
+                                    </ul>
+                                </strong>
+                            </td>
+
                         </tr>
-                       
+
                     </tfoot>
                 </table>
-                
+
             </div>
         </div>
     </div>
-</div>	
+</div>
 <?php get_footer(); ?>

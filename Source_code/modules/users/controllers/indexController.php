@@ -37,7 +37,10 @@ function indexAction(){
 
 
 function logoutAction(){
-	
+	$_SESSION['is_login']=false;  
+	unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    unset($_SESSION['fullname']);
 	logout();
 	header('location:?modules=home');
 }
@@ -48,8 +51,8 @@ function logoutAction(){
 
 function loginAction(){
 
-	$username;
-	$password;
+	$username="";
+	$password="";
 	$err = array();
 	if (!empty($_POST['btn_submit'])) {
 			
@@ -77,6 +80,7 @@ function loginAction(){
 				$_SESSION['mail'] = $dataUser['mail'];
 				$_SESSION['phone'] = $dataUser['phone'];
 				$_SESSION['address'] = $dataUser['address'];
+				$_SESSION['is_login'] = true;
 				
 				header('location:?modules=home');
 			}else{

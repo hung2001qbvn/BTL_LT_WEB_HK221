@@ -1,6 +1,6 @@
 <div id="sidebar" class="fl-left">
     <ul id="sidebar-menu">
-       <li class="nav-item">
+        <li class="nav-item">
             <a href="" title="" class="nav-link nav-toggle">
                 <span class="fa fa-map icon"></span>
                 <span class="title">Quản lý đóng góp</span>
@@ -9,7 +9,7 @@
                 <li class="nav-item">
                     <a href="?modules=home" title="" class="nav-link aha">Danh sách</a>
                 </li>
-            </ul> 
+            </ul>
         </li>
         <li class="nav-item">
             <a href="" title="" class="nav-link nav-toggle">
@@ -35,10 +35,12 @@
                     <a href="?modules=products&controllers=index&action=add" title="" class="nav-link aha">Thêm mới</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?modules=products&controllers=index&action=list" title="" class="nav-link aha">Danh sách</a>
+                    <a href="?modules=products&controllers=index&action=list" title="" class="nav-link aha">Danh
+                        sách</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?modules=comment&controllers=index&action=list" title="" class="nav-link aha">Quản lí bình luận</a>
+                    <a href="?modules=comment&controllers=index&action=list" title="" class="nav-link aha">Quản lí bình
+                        luận</a>
                 </li>
             </ul>
         </li>
@@ -52,18 +54,19 @@
                     <a href="?modules=categorys&controllers=index&action=add" title="" class="nav-link aha">Thêm mới</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?modules=categorys&controllers=index&action=list" title="" class="nav-link aha">Danh sách</a>
+                    <a href="?modules=categorys&controllers=index&action=list" title="" class="nav-link aha">Danh
+                        sách</a>
                 </li>
             </ul>
         </li>
-            <li class="nav-item">
+        <li class="nav-item">
             <a href="" title="" class="nav-link nav-toggle">
                 <span class="fa fa-product-hunt icon"></span>
                 <span class="title">Quản lý thương hiệu</span>
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="?modules=brands&controllers=index&action=add" title="" class="nav-link aha" >Thêm mới</a>
+                    <a href="?modules=brands&controllers=index&action=add" title="" class="nav-link aha">Thêm mới</a>
                 </li>
                 <li class="nav-item">
                     <a href="?modules=brands&controllers=index&action=list" title="" class="nav-link aha">Danh sách</a>
@@ -77,13 +80,16 @@
             </a>
             <ul class="sub-menu">
                 <li class="nav-item">
-                    <a href="?modules=orders&controllers=index&action=listNo" title="" class="nav-link aha">Danh sách đơn hàng cần xử lý</a>
+                    <a href="?modules=orders&controllers=index&action=listNo" title="" class="nav-link aha">Danh sách
+                        đơn hàng cần xử lý</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?modules=orders&controllers=index&action=list" title="" class="nav-link aha">Danh sách đơn hàng thành công</a>
+                    <a href="?modules=orders&controllers=index&action=list" title="" class="nav-link aha">Danh sách đơn
+                        hàng thành công</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?modules=customers&controllers=index&action=list" title="" class="nav-link aha">Danh sách khách hàng</a>
+                    <a href="?modules=customers&controllers=index&action=list" title="" class="nav-link aha">Danh sách
+                        khách hàng</a>
                 </li>
             </ul>
         </li>
@@ -115,10 +121,23 @@
                     <a href="?modules=sliders&controllers=index&action=add" title="" class="nav-link aha">Thêm mới</a>
                 </li>
                 <li class="nav-item">
-                    <a href="?modules=sliders&controllers=index&action=list" title="" class="nav-link aha">Danh sách slider</a>
+                    <a href="?modules=sliders&controllers=index&action=list" title="" class="nav-link aha">Danh sách
+                        slider</a>
                 </li>
             </ul>
         </li>
-        
+        <li class="nav-item">
+            <a href="" title="" class="nav-link nav-toggle">
+                <span class="fa fa-database icon"></span>
+                <span class="title">Quản lý Thông tin liên hệ</span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item">
+                    <a href="?modules=storeInfo&controllers=index&action=add" title="" class="nav-link aha">Sửa thông
+                        tin
+                        liên hệ</a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>

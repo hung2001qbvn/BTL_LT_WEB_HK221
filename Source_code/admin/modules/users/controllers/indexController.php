@@ -82,12 +82,11 @@ function updateAction(){
 // đăng xuất tải khoản
 function logoutAction() {
 
-    unset($_SESSION['is_login']);
+    $_SESSION['is_login']=false;
     unset($_SESSION['username']);
     unset($_SESSION['password']);
     unset($_SESSION['fullname']);
     header('location:?modules=users&controller=index&action=login');
-
 }
 
 // đăng nhập tài khoản admin
@@ -97,7 +96,7 @@ function loginAction() {
     $username;
     $password;
     $aleart=[];
-    
+ 
     if(!empty($_POST['SignIn'])){
         if(!empty($_POST['username'])){
             $username = $_POST['username'];
@@ -112,7 +111,8 @@ function loginAction() {
             $err['password'] = "password lỗi";
         }
     }
-
+    
+    $_SESSION['is_admin'] = false;
     if(!empty($username) && !empty($password)){
         if(checkLogin($username, $password)){
             $data = getUserByUsername($username,$password);
@@ -120,6 +120,9 @@ function loginAction() {
             $_SESSION['username'] = $username;
             $_SESSION['fullname'] = $data[0]['fullname'];
             $_SESSION['password'] = $password;
+            $_SESSION['is_admin'] = true;
+            $_SESSION['id_customer'] = 999;
+            
             header('location:?modules=home');
         }
         else {
