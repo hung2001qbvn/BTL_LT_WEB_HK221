@@ -4,9 +4,10 @@
             <h3 class="section-title">Danh mục sản phẩm</h3>
         </div>
         <div class="secion-detail">
-            <ul class="list-item">
+            <ul class="list-item p-0">
                 <li>
-                    <a href="?modules=products&controllers=index&action=show&id_cat=13" title="dien_thoai">Điện Thoại</a>
+                    <a href="?modules=products&controllers=index&action=show&id_cat=13" title="dien_thoai">Điện
+                        Thoại</a>
                 </li>
                 <li>
                     <a href="?modules=products&controllers=index&action=show&id_cat=14" title="">Máy Tính Bảng</a>
@@ -25,22 +26,26 @@
             <ul class="list-item">
 
                 <?php if(!empty($_SESSION['product_hot'])){ $i=0; foreach ($_SESSION['product_hot'] as $value) {?>
-                    <?php $i++; if($i>6) break; ?>
+                <?php $i++; if($i>6) break; ?>
                 <li class="clearfix" style="margin-bottom: 10%">
-                    <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title="" class="thumb fl-left">
+                    <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title=""
+                        class="thumb fl-left">
                         <img src="<?php echo $value['image']; ?>" alt="">
                     </a>
                     <div class="info fl-right">
-                        <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title="" class="product-name"><?php echo $value['name']; ?></a>
+                        <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>"
+                            title="" class="product-name"><?php echo $value['name']; ?></a>
                         <div class="price">
-                            <span style="display: block;" class="new"><?php echo $value['promotional_price'].' VNĐ'; ?></span>
+                            <span style="display: block;"
+                                class="new"><?php echo $value['promotional_price'].' VNĐ'; ?></span>
                             <span style="display: block;" class="old"><?php echo $value['price'].' .VNĐ'; ?></span>
                         </div>
-                        <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=addByNow&id=$id"; else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> " title="" class="buy-now">Mua ngay</a>
+                        <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=addByNow&id=$id"; else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
+                            title="" class="buy-now">Mua ngay</a>
                     </div>
                 </li>
                 <?php }}; ?>
-                
+
             </ul>
         </div>
     </div>
@@ -49,14 +54,14 @@
             <a href="" title="" class="thumb">
                 <img src="public/images/banner00.jpg" alt="">
             </a>
-                
+
             <a href="" title="" class="thumb" style="margin-top: 10px;">
                 <img src="public/images/banner01.png" alt="">
-            </a> 
+            </a>
 
             <a href="" title="" class="thumb" style="margin-top: 10px;">
                 <img src="public/images/bigsale1.jpg" alt="">
-            </a> 
+            </a>
 
         </div>
     </div>
