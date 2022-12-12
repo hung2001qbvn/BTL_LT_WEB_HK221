@@ -27,10 +27,10 @@
     color: #fff;
     padding: 13px 0px;
 }
-#head-body #search-wp{ padding: 22px 0px 22px 195px;}
+#head-body #search-wp{ }
 #head-body #search-wp #s{
     display: inline-block;
-    width: 450px;
+    width: 200px;
     border: none;
     outline: none;
     padding: 8px 20px;

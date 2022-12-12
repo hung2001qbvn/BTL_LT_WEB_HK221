@@ -4,10 +4,10 @@
             <h3 class="section-title">Danh mục sản phẩm</h3>
         </div>
         <div class="secion-detail">
-             <ul class="list-item">
+            <ul class="list-item p-0">
                 <li>
                     <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Điện Thoại</a>
-                 <!--   <ul class="sub-menu">
+                    <!--   <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">Iphone</a>
                                 </li>
@@ -22,7 +22,7 @@
                 </li>
                 <li>
                     <a href="?modules=products&controllers=index&action=show&id_cat=14" title="">Máy Tính Bảng</a>
-                   <!-- <ul class="sub-menu">
+                    <!-- <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">Iphone</a>
                                 </li>
@@ -37,7 +37,7 @@
                 </li>
                 <li>
                     <a href="?modules=products&controllers=index&action=show&id_cat=12" title="">Lap Top</a>
-                   <!-- <ul class="sub-menu">
+                    <!-- <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">Dell</a>
                                 </li>
@@ -49,7 +49,7 @@
                                 </li>
                             </ul> -->
                 </li>
-               
+
             </ul>
         </div>
     </div>
@@ -134,7 +134,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <input style="width: 100%;color: white; background-color: #95d895;border-radius: 5px; border: none; " type="submit" name="btn_filter" value="Áp dụng">
+                <input style="width: 100%;color: white; background-color: #95d895;border-radius: 5px; border: none; "
+                    type="submit" name="btn_filter" value="Áp dụng">
             </form>
         </div>
     </div>

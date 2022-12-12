@@ -72,28 +72,13 @@
                 <a href="?page=home" title>Trang chủ</a>
             </li>
             <li>
-                <a href="?page=category_product" title>Điện thoại</a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="?page=category_product" title="">Iphone</a>
-                    </li>
-                    <li>
-                        <a href="?page=category_product" title="">Samsung</a>
-
-                    </li>
-                    <li>
-                        <a href="?page=category_product" title="">Nokia</a>
-                    </li>
-                </ul>
+                <a href="?modules=products&controllers=index&action=show&id_cat=13" title>Điện thoại</a>
             </li>
             <li>
-                <a href="?page=category_product" title>Máy tính bảng</a>
+                <a href="?modules=products&controllers=index&action=show&id_cat=14" title>Máy tính bảng</a>
             </li>
             <li>
-                <a href="?page=category_product" title>Laptop</a>
-            </li>
-            <li>
-                <a href="?page=category_product" title>Đồ dùng sinh hoạt</a>
+                <a href="?modules=products&controllers=index&action=show&id_cat=12" title>Laptop</a>
             </li>
             <li>
                 <a href="?page=blog" title>Blog</a>

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>SMART SHOP PTN</title>
+    <title>SMARTSHOP XL</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -28,49 +28,48 @@
         <div id="container">
             <div id="header-wp">
                 <div id="head-top" class="clearfix">
-                    <div class="wp-inner">
-                        <a href="" title="" id="payment-link" class="fl-left">
+                    <div class="wp-inner d-flex justify-content-between flex-md-row flex-column">
+                        <a href="" title="" id="payment-link" class="m-0">
+                            <span class="ti-link"></span> Hình thức thanh toán
+                        </a>
 
-                            <span class="ti-link"></span> Hình thức thanh toán</a>
-                        <div id="main-menu-wp" class="fl-right">
-                            <ul id="main-menu" class="clearfix">
-                                <li>
-                                    <a href="?modules=blogs&action=list" title="">
-                                        <span class="ti-bookmark-alt"></span> Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="?modules=contacts&action=introduce" title="">
-                                        <span class="ti-envelope"></span>
-                                        Giới thiệu</a>
-                                </li>
-                                <li>
-                                    <a href="?modules=contacts&action=contact" title="">
-                                        <span class="ti-headphone"></span>
-                                        Liên hệ</a>
-                                </li>
+                        <ul id="main-menu" class="ps-0 d-flex justify-content-evenly">
+                            <li>
+                                <a href="?modules=blogs&action=list" title="">
+                                    <span class="ti-bookmark-alt"></span> Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?modules=contacts&action=introduce" title="">
+                                    <span class="ti-envelope"></span>
+                                    Giới thiệu</a>
+                            </li>
+                            <li>
+                                <a href="?modules=contacts&action=contact" title="">
+                                    <span class="ti-headphone"></span>
+                                    Liên hệ</a>
+                            </li>
 
-                                <li>
-                                    <?php if (!empty($_SESSION['is_admin'])){ ?>
-                                    <a href="admin/?modules=home"> <?php if (!empty($_SESSION['fullname'])) 
-                                        echo $_SESSION['fullname'];
-                                            else echo "<span class=\"ti-user\">"."Tài khoản"."</span>"; ?></a>
-                                    <?php }; ?>
-                                    <?php if(empty($_SESSION['is_admin'])){ ?><a href="?modules=users&action=index">
-                                        <?php if (!empty($_SESSION['fullname'])) 
-                                        echo $_SESSION['fullname'];
-                                            else echo "<span class=\"ti-user\">"."Tài khoản"."</span>"; ?></a>
-                                    <?php }; ?>
-                                </li>
-                                <?php if (!empty($_SESSION['fullname'])) { ?>
-
-                                <li>
-                                    <a href="?modules=users&action=logout" title="">(Đăng xuất)</a>
-                                </li>
+                            <li>
+                                <?php if (!empty($_SESSION['is_admin'])){ ?>
+                                <a href="admin/?modules=home"> <?php if (!empty($_SESSION['fullname'])) 
+                                    echo $_SESSION['fullname'];
+                                        else echo "<span class=\"ti-user\">"."Tài khoản"."</span>"; ?></a>
                                 <?php }; ?>
-                                <a style="display: inline;" href=""></a>
-                            </ul>
-                        </div>
+                                <?php if(empty($_SESSION['is_admin'])){ ?><a href="?modules=users&action=index">
+                                    <?php if (!empty($_SESSION['fullname'])) 
+                                    echo $_SESSION['fullname'];
+                                        else echo "<span class=\"ti-user\">"."Tài khoản"."</span>"; ?></a>
+                                <?php }; ?>
+                            </li>
+                            <?php if (!empty($_SESSION['fullname'])) { ?>
+
+                            <li>
+                                <a href="?modules=users&action=logout" title="">(Đăng xuất)</a>
+                            </li>
+                            <?php }; ?>
+                            <a style="display: inline;" href=""></a>
+                        </ul>
                     </div>
                 </div>
                 <!-- Bar search header -->
@@ -91,13 +90,16 @@
                                 <span class="phone">091.091.0910</span>
                             </div>
                             <div id="btn-respon" class="fl-right"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                            <a href="?page=cart" title="giỏ hàng" id="cart-respon-wp" class="fl-right">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span id="num">2</span>
+                            <a href="?modules=carts&action=show" title="giỏ hàng" id="cart-respon-wp" class="fl-right">
+                                <i class="fa fa-shopping-cart" style="cursor:pointer;"
+                                    href="/?modules=carts&action=show" aria-hidden="true"></i>
+                                <span id="num"><?php if (isset($_SESSION['cart']['buy']) && !empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder'];
+                                                    else echo '0'; ?></span>
                             </a>
                             <div id="cart-wp" class="fl-right">
                                 <div id="btn-cart">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <i class="fa fa-shopping-cart" style="cursor:pointer;"
+                                        href="/?modules=carts&action=show" aria-hidden="true"></i>
                                     <span id="num"><?php if (isset($_SESSION['cart']['buy']) && !empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder'];
                                                     else echo '0'; ?></span>
                                 </div>
@@ -129,7 +131,8 @@
                                     </div>
                                     <dic class="action-cart clearfix">
                                         <a href="?modules=carts&action=show" title="Giỏ hàng"
-                                            class="view-cart fl-left">Giỏ hàng</a>
+                                            class="view-cart fl-left">Giỏ
+                                            hàng</a>
                                         <a href="?modules=checkouts&action=index" title="Thanh toán"
                                             class="checkout fl-right">Thanh toán</a>
                                     </dic>
