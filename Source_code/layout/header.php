@@ -74,18 +74,17 @@
                 </div>
                 <!-- Bar search header -->
                 <div id="head-body" class="clearfix">
-                    <div class="wp-inner">
+                    <div class="wp-inner d-flex justify-content-between">
                         <a href="?modules=home" title="" id="logo" class="fl-left"><img
                                 src="public/images/smart-mobi2.png" style="height: 60px; border-radius: 5px" /></a>
-                        <div id="search-wp" class="fl-left">
+                        <div id="search-wp" class="fl-left align-items-center d-none d-lg-flex d-md-flex">
                             <form method="post" action="?modules=search&controllers=index&action=search">
                                 <input type="text" name="key_word" id="s" placeholder="Bạn muốn tìm gì...!">
                                 <input type="submit" id="sm-s" name="btn_submit" value="Tìm kiếm">
                             </form>
-
                         </div>
                         <div id="action-wp" class="fl-right">
-                            <div id="advisory-wp" class="fl-left">
+                            <div id="advisory-wp" class="fl-left d-lg-inline d-none">
                                 <span class="title">Tư vấn</span>
                                 <span class="phone">091.091.0910</span>
                             </div>
